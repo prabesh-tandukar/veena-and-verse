@@ -21,37 +21,18 @@ export default function Navbar() {
     return () => subscription.unsubscribe()
   }, [])
 
-  // Secret keyboard shortcut: Press 'a' three times quickly to access admin login
+  // Secret keyboard shortcut: Press Alt+Shift+L to access admin login
   useEffect(() => {
-    let keyPressCount = 0
-    let resetTimer = null
-
     const handleKeyPress = (e) => {
-      if (e.key === 'a' || e.key === 'A') {
-        keyPressCount++
-
-        // Clear existing timer
-        if (resetTimer) clearTimeout(resetTimer)
-
-        // If pressed 3 times, navigate to admin
-        if (keyPressCount === 3) {
-          e.preventDefault()
-          navigate('/admin/login')
-          keyPressCount = 0
-        }
-
-        // Reset counter after 1 second of no presses
-        resetTimer = setTimeout(() => {
-          keyPressCount = 0
-        }, 1000)
+      // Alt+Shift+L (or Option+Shift+L on Mac)
+      if (e.altKey && e.shiftKey && (e.key === 'L' || e.key === 'l')) {
+        e.preventDefault()
+        navigate('/admin/login')
       }
     }
 
     window.addEventListener('keydown', handleKeyPress)
-    return () => {
-      window.removeEventListener('keydown', handleKeyPress)
-      if (resetTimer) clearTimeout(resetTimer)
-    }
+    return () => window.removeEventListener('keydown', handleKeyPress)
   }, [navigate])
 
   const handleLogout = async () => {
