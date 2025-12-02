@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import BookDetailPage from './pages/BookDetailPage'
 import RequestBook from './pages/RequestBook'
+import LinkInBio from './pages/LinkInBio'
 import AdminLogin from './pages/Admin/Login'
 import AdminDashboard from './pages/Admin/Dashboard'
 import ManageBooks from './pages/Admin/ManageBooks'
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/book/:id" element={<BookDetailPage />} />
           <Route path="/request" element={<RequestBook />} />
+          <Route path="/links" element={<LinkInBio />} />
 
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
