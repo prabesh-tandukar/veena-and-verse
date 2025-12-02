@@ -25,7 +25,7 @@ export default function LinkInBio() {
       description: "Quick questions? Message us directly",
       href: `https://wa.me/${whatsappNumber}`,
       internal: false,
-    }
+    },
   ];
 
   return (
@@ -80,13 +80,6 @@ export default function LinkInBio() {
               </LinkComponent>
             );
           })}
-        </div>
-
-        {/* Footer */}
-        <div className="text-center mt-12 pt-8 border-t border-gray-100">
-          <p className="text-xs text-gray-400 font-light tracking-wide">
-            &copy; 2024 Veena & Verse
-          </p>
         </div>
       </div>
     </div>
