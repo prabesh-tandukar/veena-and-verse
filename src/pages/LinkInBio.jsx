@@ -1,4 +1,4 @@
-import { BookOpen, MessageCircle, MapPin, Mail, Instagram } from "lucide-react";
+import { BookOpen, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function LinkInBio() {
@@ -25,21 +25,7 @@ export default function LinkInBio() {
       description: "Quick questions? Message us directly",
       href: `https://wa.me/${whatsappNumber}`,
       internal: false,
-    },
-    // {
-    //   icon: MapPin,
-    //   title: 'Visit Our Store',
-    //   description: 'Come browse in person',
-    //   href: 'https://maps.google.com',
-    //   internal: false
-    // },
-    // {
-    //   icon: Mail,
-    //   title: 'Email Us',
-    //   description: 'hello@veenaandverse.com',
-    //   href: 'mailto:hello@veenaandverse.com',
-    //   internal: false
-    // }
+    }
   ];
 
   return (
