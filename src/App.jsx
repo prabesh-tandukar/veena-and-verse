@@ -55,6 +55,17 @@ function App() {
           <p className="text-sm text-gray-400 font-light tracking-wide">
             &copy; 2024 Veena & Verse
           </p>
+          <p className="text-xs text-gray-300 font-light mt-2">
+            Built by{' '}
+            <a
+              href="https://github.com/prabesh-tandukar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-900 transition-colors duration-300"
+            >
+              Prabesh Tandukar
+            </a>
+          </p>
         </div>
       </footer>
     </div>
