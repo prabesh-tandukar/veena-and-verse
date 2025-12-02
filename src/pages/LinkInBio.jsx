@@ -1,46 +1,46 @@
-import { BookOpen, MessageCircle, MapPin, Mail, Instagram } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { BookOpen, MessageCircle, MapPin, Mail, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function LinkInBio() {
-  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '640220232207'
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "640220232207";
 
   const links = [
     {
       icon: BookOpen,
-      title: 'Browse Our Collection',
-      description: 'Explore our curated selection of books',
-      href: '/',
-      internal: true
+      title: "Browse Our Collection",
+      description: "Explore our curated selection of books",
+      href: "/",
+      internal: true,
     },
     {
       icon: MessageCircle,
-      title: 'Request a Book',
+      title: "Request a Book",
       description: "Can't find what you're looking for?",
-      href: '/request',
-      internal: true
+      href: "/request",
+      internal: true,
     },
     {
       icon: MessageCircle,
-      title: 'Chat on WhatsApp',
-      description: 'Quick questions? Message us directly',
+      title: "Chat on WhatsApp",
+      description: "Quick questions? Message us directly",
       href: `https://wa.me/${whatsappNumber}`,
-      internal: false
+      internal: false,
     },
-    {
-      icon: MapPin,
-      title: 'Visit Our Store',
-      description: 'Come browse in person',
-      href: 'https://maps.google.com',
-      internal: false
-    },
-    {
-      icon: Mail,
-      title: 'Email Us',
-      description: 'hello@veenaandverse.com',
-      href: 'mailto:hello@veenaandverse.com',
-      internal: false
-    }
-  ]
+    // {
+    //   icon: MapPin,
+    //   title: 'Visit Our Store',
+    //   description: 'Come browse in person',
+    //   href: 'https://maps.google.com',
+    //   internal: false
+    // },
+    // {
+    //   icon: Mail,
+    //   title: 'Email Us',
+    //   description: 'hello@veenaandverse.com',
+    //   href: 'mailto:hello@veenaandverse.com',
+    //   internal: false
+    // }
+  ];
 
   return (
     <div className="min-h-screen bg-white py-12 px-4">
@@ -58,18 +58,18 @@ export default function LinkInBio() {
         {/* Links */}
         <div className="space-y-4">
           {links.map((link, index) => {
-            const Icon = link.icon
-            const LinkComponent = link.internal ? Link : 'a'
+            const Icon = link.icon;
+            const LinkComponent = link.internal ? Link : "a";
             const linkProps = link.internal
               ? { to: link.href }
-              : { href: link.href, target: '_blank', rel: 'noopener noreferrer' }
+              : {
+                  href: link.href,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                };
 
             return (
-              <LinkComponent
-                key={index}
-                {...linkProps}
-                className="block group"
-              >
+              <LinkComponent key={index} {...linkProps} className="block group">
                 <div className="bg-white border border-gray-200 rounded-lg p-5 hover:border-gray-900 hover:shadow-lg transition-all duration-300">
                   <div className="flex items-center gap-4">
                     <div className="flex-shrink-0">
@@ -92,7 +92,7 @@ export default function LinkInBio() {
                   </div>
                 </div>
               </LinkComponent>
-            )
+            );
           })}
         </div>
 
@@ -104,5 +104,5 @@ export default function LinkInBio() {
         </div>
       </div>
     </div>
-  )
+  );
 }
